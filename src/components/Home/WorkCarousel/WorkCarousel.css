@@ -1,0 +1,7 @@
+.carousel-container {
+background-color: #111430;
+}
+.carousel-container img {
+    height: 300px;
+    width: 400px !important;
+}
