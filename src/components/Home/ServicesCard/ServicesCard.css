@@ -1,0 +1,8 @@
+.services-card{
+    border: none;
+    text-align: center;
+    color: black;
+}
+.services-card:hover{
+    box-shadow: 2px 2px 20px lightgrey;
+}
