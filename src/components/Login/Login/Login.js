@@ -29,7 +29,6 @@ const Login = () => {
                 name: displayName, 
                 email: email, 
                 image: photoURL}
-            console.log(newUserInfo)
             setLoggedInUser(newUserInfo);
             storeAuthToken();
             history.replace(from);

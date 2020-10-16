@@ -1,10 +1,23 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { UserContext } from '../../../App';
 import logo from '../../../images/logos/logo.png';
 import './Sidebar.css';
 
 const Sidebar = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
+    const [isAdmin, setIsAdmin] = useState(false);
     const { title } = useParams();
+
+    // useEffect(() => {
+    //     fetch('https://cryptic-shore-23790.herokuapp.com/isAdmin', {
+    //         method: 'POST',
+    //         headers: { 'Content-Type': 'application/json' },
+    //         body: JSON.stringify({ email: loggedInUser.email })
+    //     })
+    //     .then(response => response.json())
+    //     .then(data => setIsAdmin(data))
+    // }, []);
 
     return (
         <div className='pt-3 pl-2 sidebar' style={{ height: '100vh' }}>

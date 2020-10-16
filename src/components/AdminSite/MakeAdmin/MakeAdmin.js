@@ -4,29 +4,23 @@ import Sidebar from '../../Customar/Sidebar/Sidebar';
 
 const MakeAdmin = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-    const [info, setInfo] = useState({});
-
-    const handleBlur = e => {
-        const newInfo = { ...info };
-        newInfo[e.target.name] = e.target.value;
-        setInfo(newInfo);
-    };
 
     const handleSubmit = (e) => {
-        const formData = new FormData();
-        formData.append('email', info.email);
+        const email = document.getElementById('email').value;
 
-        fetch('https://cryptic-shore-23790.herokuapp.com/addAdmin', {
+        fetch("https://cryptic-shore-23790.herokuapp.com/addAdmin", {
             method: 'POST',
-            body: formData
+            headers: { 'Content-Type': 'application/json'},
+            body: JSON.parse(email)
         })
             .then(response => response.json())
             .then(data => {
-                console.log(data)
+                alert(data)
             })
             .catch(error => {
-                console.error(error)
+                alert(error)
             })
+        
         e.preventDefault();
     }
 
@@ -50,7 +44,7 @@ const MakeAdmin = () => {
                             <form onSubmit={handleSubmit}>
                                 <div className="form-group">
                                     <label>Make Admin email</label>
-                                    <input onBlur={handleBlur} type="email" className="form-control" name="email" placeholder="Enter make Admin email" />
+                                    <input type="email" id='email' className="form-control" name="email" placeholder="Enter make Admin email" />
                                 </div>
                                 <button type="submit" className="btn btn-success">Submit</button>
                             </form>

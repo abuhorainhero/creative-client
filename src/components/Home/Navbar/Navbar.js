@@ -19,10 +19,10 @@ const Navbar = () => {
                             <Link to='/home' className="nav-link">Home <span className="sr-only">(current)</span></Link>
                         </li>
                         <li className="nav-item">
-                            <Link to='/' className="nav-link">Our Portfolio</Link>
+                            <Link to='/order/:title' className="nav-link">Customar</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to='/' className="nav-link">Our Team</Link>
+                            <Link to='/allServicesList' className="nav-link">Admin</Link>
                         </li>
                         <li className="nav-item">
                             <Link to='/' className="nav-link">Contact Us</Link>
